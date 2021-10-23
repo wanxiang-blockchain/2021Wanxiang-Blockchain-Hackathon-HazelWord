@@ -1,0 +1,53 @@
+// 这里的文件要打进webpack$sz-padding: .3rem;
+
+// 字体颜色
+$sz-padding: .3rem;
+$sz-color-font-level2: #a1a8ae;
+$sz-color-font-desc: #d2d2d2;
+$sz-color-font-link: #318ff5;
+$sz-color-font-member: #C49C4F;
+$sz-color-white: #fff;
+$sz-color-red: #FF3366;
+$sz-color-green: #6ec224;
+$sz-color-light-green: #4dd366;
+$sz-color-purple: #aa89bd;
+$sz-color-orange: orange;
+$sz-color-dark-orange: #F47E51;
+$sz-color-blue: #318ff5;
+$sz-color-gray: #a1a8ae;
+$sz-color-member: #C49C4F;
+$sz-color-dark-green: #22B182;
+$sz-color-dark-gray: #80848A;
+// 背景颜色
+$sz-color-bg-white: #FFF;
+$sz-color-bg-darkgray: #cfcfcf;
+$sz-color-bg-gray: #e7e7e7;
+$sz-color-bg-lightgray: #F3F3F3;
+// 边框颜色
+$sz-color-border-gray: #e5e5e5;
+$sz-color-border-lightgray: #e7e7e7;
+$sz-color-blue: #318FF5;
+$sz-color-red: #ff3366;
+$sz-color-gray: #a1a8ae;
+$sz-color-minus-gray: #d5d7d9;
+$sz-color-black: #555;
+$sz-color-green: #4dd366;
+$sz-border-color-gray: #eee;
+$sz-bg-color-gray: #f3f3f3;
+$sz-bg-color-success: #03DD9D;
+$sz-color-navy-blue: #384150;
+$sz-color-disabled: #F5F5F5;
+$sz-color-text-disabled: #D9D9D9;
+$sz-color-orange: #ffb400;
+$sz-bg-color-disabled: #e1e1e1;
+$sz-app-black: #272B45;
+$sz-app-gray: #999;
+$sz-app-gold: #BBA06D;
+
+@function pxToRem($px) {
+  @return $px / 100 * 2rem;
+}
+
+@function rem($px) {
+  @return $px / 100 * 1rem;
+}

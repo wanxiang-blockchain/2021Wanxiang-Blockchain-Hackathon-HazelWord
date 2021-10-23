@@ -1,0 +1,181 @@
+/* 动画相关 */
+
+// keyframes定义
+// 渐出
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+// 渐隐
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+// 上滑
+@keyframes upSlide {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// 下滑
+@keyframes downSlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+// 下滑渐出
+@keyframes downSlideOut {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// 上滑渐隐
+@keyframes upSlideIn {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+
+// 放大（dialog弹出）
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 缩小（dialog隐藏）
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+
+/* 动画类定义 */
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+.upSlide {
+  animation-name: upSlide;
+}
+
+.downSlide {
+  animation-name: downSlide;
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+}
+
+
+
+
+
+/* vue transiton 相关定义 */
+
+// 动画属性定义
+.sz-animated {
+  transform: translateZ(0); // 强制开启IOS GPU加速
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+.sz-animate-duration5 {
+  animation-duration: 0.5s;
+}
+
+// fadeIn渐出
+.fade-enter-active {
+  animation-name: fadeIn;
+}
+
+// fadeOut渐隐
+.fade-leave-active {
+  animation-name: fadeOut;
+
+}
+
+// zoomIn放大
+.zoom-enter-active {
+  animation-name: zoomIn;
+}
+
+// zoomOut缩小
+.zoom-leave-active {
+  animation-name: zoomOut;
+}
+
+// upSlide上滑
+.slide-enter-active {
+  animation-name: upSlide;
+
+}
+
+// dowmSlide下滑
+.slide-leave-active {
+  animation-name: downSlide;
+}
+
+// upSlide上滑
+.slideReverse-enter-active {
+  animation-name: downSlideOut;
+
+}
+
+// dowmSlide下滑
+.slideReverse-leave-active {
+  animation-name: upSlideIn;
+}

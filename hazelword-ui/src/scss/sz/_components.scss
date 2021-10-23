@@ -1,0 +1,344 @@
+/* 
+  这里存放一些组件（或者页面片）相关的样式
+  比如；coupon、商品详情表格的table等
+*/
+
+//套餐详情（检查项表格样式）
+table.pkg-detail {
+  width: 100%;
+  overflow: hidden;
+  font-size: pxToRem(12);
+  table-layout: fixed;
+  border: 1px solid #A5D0FF;
+  border-bottom: none;
+  border-radius: pxToRem(5);
+  border-collapse: separate !important;
+  border-spacing: 0;
+
+  thead {
+    color: #318ff5;
+    font-weight: normal;
+    background-color: #F0F5FE;
+
+    th {
+      padding: pxToRem(10) 0;
+      text-align: center;
+
+      &:nth-of-type(1) {
+        border-right: 1px solid #A5D0FF;
+      }
+
+      &:nth-of-type(2) {
+        border-right: 1px solid #A5D0FF;
+      }
+    }
+  }
+
+  tbody {
+    td {
+      padding: pxToRem(5);
+      vertical-align: middle;
+      border-right: 1px solid #A5D0FF;
+      border-bottom: 1px solid #A5D0FF;
+
+      &.borderLeftNone {
+        border-left: none !important;
+      }
+
+      &:first-child {
+        color: #272B45;
+        vertical-align: middle;
+
+        &[rowspan] {
+          &.text-red {
+            border-left: 1px solid #A5D0FF;
+          }
+        }
+
+        &.text-black {
+          color: $sz-color-black;
+          vertical-align: middle;
+          border-left: none;
+        }
+      }
+
+      &:nth-of-type(3) {
+        border-right: none;
+      }
+    }
+  }
+}
+
+// 优惠券样式
+.c-coupon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: rem(100);
+  padding: 0 $sz-padding;
+  background: #FFF;
+
+  &-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__icon {
+      // width: rem(54);
+      height: rem(36);
+      margin-top: rem(-10);
+      margin-right: rem(10);
+    }
+  }
+}
+
+// 加项包组件
+.sz-group,
+.sz-addgoods-group {
+  width: 100%;
+  background: $sz-color-white;
+
+  &-title {
+    height: rem(88);
+    padding: 0 $sz-padding;
+    line-height: rem(100);
+    background: $sz-color-bg-lightgray;
+
+    &__light {
+      position: relative;
+      height: rem(88);
+      padding: 0 $sz-padding;
+      color: $sz-color-blue;
+      line-height: rem(100);
+      background: $sz-color-white;
+      border-bottom: 1px solid $sz-color-border-gray;
+
+      &:before {
+        position: absolute;
+        top: rem(32);
+        left: 0;
+        width: rem(4);
+        height: rem(34);
+        background: $sz-color-blue;
+        content: ' ';
+      }
+    }
+  }
+}
+
+.sz-cell,
+.sz-addgoods {
+  position: relative;
+  background: #fff;
+
+  // 加项包标题
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: rem(100);
+    padding: rem(20) $sz-padding;
+
+    &__content {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    &__icon-right {
+      flex: 0 0 auto;
+      margin-left: rem(20);
+    }
+
+    &__icon-left {
+      flex: 0 0 auto;
+      margin-right: rem(20);
+    }
+  }
+
+  // 加项包详情
+  &-detail {
+    position: relative;
+    padding: rem(20) $sz-padding;
+    border-top: rem(20) solid $sz-color-bg-lightgray;
+
+    &__arrow {
+      position: absolute;
+      top: rem(-56);
+      left: rem(120);
+      border: rem(20) solid transparent;
+      border-bottom-color: $sz-color-bg-lightgray;
+    }
+
+    &-item {
+      padding: rem(10) 0;
+
+      &__title {
+        display: inline-block;
+        height: rem(62);
+        margin-bottom: rem(12);
+        padding: 0 $sz-padding;
+        line-height: rem(60);
+        background-color: rgba(49, 143, 245, 0.1);
+        border: 1px solid rgba(49, 143, 245, 0.2);
+        border-radius: rem(30);
+      }
+    }
+
+    &-showall {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: rem(80);
+      color: $sz-color-blue;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, .3), rgba(255, 255, 255, .5), rgba(255, 255, 255, .7), #fff, #fff);
+    }
+
+    &.limit {
+      height: 3rem;
+      overflow: hidden;
+    }
+  }
+
+  &+&:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 15px;
+    z-index: 10;
+    height: 1px;
+    background: #e5e5e5;
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+    content: " ";
+  }
+}
+
+
+// 协议相关补充样式
+.proto-container {
+  p {
+    color: #999;
+    font-size: .24rem;
+    line-height: .60rem;
+    text-indent: .48rem;
+  }
+}
+
+// 开关
+.sz-switch {
+  position: relative;
+  box-sizing: border-box;
+  width: 1.04rem;
+  height: .64rem;
+  background-color: #dfdfdf;
+  border: 1px solid #dfdfdf;
+  border-radius: .32rem;
+  outline: 0;
+  transform: scale(1.01);
+  transition: background-color .1s, border .1s;
+  appearance: none;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: .6rem;
+    background-color: #fdfdfd;
+    border-radius: .3rem;
+    transition: transform .35s cubic-bezier(.45, 1, .4, 1);
+    content: " ";
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .6rem;
+    height: .6rem;
+    background-color: #fff;
+    border-radius: .3rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    transition: transform .35s cubic-bezier(.4, .4, .25, 1.35);
+    content: " ";
+  }
+
+  &:checked {
+    background-color: #04be02;
+    border-color: #04be02;
+
+    &:before {
+      transform: scale(0);
+    }
+
+    &:after {
+      transform: translateX(.4rem)
+    }
+  }
+}
+
+
+// sz特色按钮
+.sz-button {
+  width: 100%;
+  height: rem(100);
+  color: $sz-color-white;
+  font-size: 0.36rem;
+  line-height: rem(100);
+  text-align: center;
+  background: $sz-color-blue;
+  border-radius: rem(8);
+  outline: none;
+  transition: background .1s linear;
+}
+
+
+
+// 按钮列表，报告解读支付页以及快问医生页面
+.sz-btn-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  &-item {
+    flex: 0 0 auto;
+    margin-left: rem(20);
+    padding: rem(6) $sz-padding;
+    color: $sz-color-font-level2;
+    border: 1px solid $sz-color-border-lightgray;
+    border-radius: rem(40);
+
+    &:first-of-type {
+      margin-left: 0.3rem;
+    }
+  }
+
+  &::after {
+    content: '　'; // 全角空格是为了给列表后侧留一点间隙
+  }
+}
+
+// 问题中心相关内容
+.question-answer {
+  padding: $sz-padding;
+  background: #FFF;
+
+  .question-answer__title {
+    font-weight: bold;
+    font-size: rem(40);
+  }
+
+  a {
+    color: $sz-color-font-link;
+  }
+
+  img {
+    width: 100%;
+  }
+}

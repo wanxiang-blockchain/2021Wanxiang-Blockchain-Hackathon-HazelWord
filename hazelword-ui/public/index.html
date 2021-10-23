@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+  <meta http-equiv="expires" content="0">
+  <link rel="icon" href="/favicon.ico">
+  <title></title>
+  <style>
+    html,
+    body {
+      background: #f3f3f3;
+    }
+    .hazel-loading{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 140%;
+      overflow: hidden;
+      color: #FFF;
+      background: #000;
+      transform: translate(-50%, -50%);
+      transition: .2s;
+      transition-delay: .2s;
+    }
+    .hazel-loading-img{
+      width: 25vw;
+      transform: translateX(-10px);
+      transform-origin: center center;
+      transition: .4s;
+    }
+
+    .hazel-loading-hide{
+      background: rgba(0, 0, 0, 0);
+      transform: translate(-50%, -50%);
+    }
+    .hazel-loading-hide .hazel-loading-img{
+      background: rgba(0, 0, 0, 0);
+      transform: translateX(-160px) scale(20);
+      opacity: 0;
+    }
+  </style>
+  
+</head>
+<body>
+  <script>
+    var loadingInstance = document.createElement('div')
+    loadingInstance.classList.add('hazel-loading')
+    // loadingInstance.innerHTML = `<img class="hazel-loading-img" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2073439784,2147418910&fm=26&gp=0.jpg" />`
+    loadingInstance.innerHTML = `<img class="hazel-loading-img" src="/animate2.gif" />`
+    
+
+    var container = document.querySelector('body')
+    window.$hazelloading = {
+      show () {
+        container.appendChild(loadingInstance)
+      },
+      hide () {
+        loadingInstance.classList.add('hazel-loading-hide')
+        setTimeout(() => {
+          loadingInstance.classList.remove('hazel-loading-hide')
+          loadingInstance.remove()
+        }, 500)
+      }
+    }
+
+    $hazelloading.show()
+  </script>
+  <noscript>
+    <strong>We're sorry but sz-html-wap-vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

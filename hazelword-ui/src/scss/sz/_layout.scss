@@ -1,0 +1,146 @@
+body {
+  min-height: 100%;
+  font-size: 0.28rem;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+
+html body {
+  background: #1f2034;
+}
+
+
+.sz-fixed {
+  position: fixed !important;
+  width: 100%;
+}
+
+.sz-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  // pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+}
+
+
+// 页面布局
+.sz-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &-header {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    height: 1rem;
+    background: #FFF;
+
+    &-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(100);
+      height: rem(100);
+    }
+
+    &-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(100);
+      height: rem(100);
+    }
+
+    &-body {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      margin-right: rem(100);
+      margin-left: rem(100);
+      font-size: rem(32);
+    }
+  }
+
+  &-body {
+    position: relative;
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background: $sz-color-bg-lightgray; // #fafafa
+
+  }
+
+  &-footer {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    height: 1rem;
+    background: $sz-color-white;
+
+    &-other {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 rem(20);
+
+      &.center {
+        justify-content: center;
+      }
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(260);
+      color: $sz-color-white;
+      background: $sz-color-blue;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $sz-color-border-lightgray;
+      content: ' ';
+    }
+  }
+}
+
+
+// 栅格布局相关
+.sz-row {
+  display: flex;
+  justify-content: center;
+}
+
+.sz-col {
+  @for $i from 1 through 3 {
+    &-#{$i} {
+      flex: #{$i};
+      text-align: center;
+    }
+  }
+}
+
+.bodyCls {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

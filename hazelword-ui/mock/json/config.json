@@ -1,0 +1,11 @@
+{
+  "SZ_BODY": {
+     "config": "asd"
+  },
+  "SZ_HEAD": {
+      "RESP_CODE": "S0000",
+      "RESP_INFO": "",
+      "RESP_MSG": "",
+      "TRACE_ID": ""
+  }
+}
